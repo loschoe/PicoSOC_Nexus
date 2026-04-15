@@ -55,6 +55,27 @@ Le projet propose une interface web interactive, hébergée directement sur le R
  Téléchargement : https://micropython.org/download/RPI_PICO_W/
  
 **Configuration** : Modifiez les variables `SSID`, `PASSWORD` et `TARGET` (IP de la cible à scanner) dans le fichier *PicoSOC_Nexus.py*.
+```py
+# =========================
+# CONFIG
+# =========================
+SSID = '[Nom_du_reseau]'
+PASSWORD = '[Mot_de_passe]'
+
+TARGET = "[IP_Cible]"
+SCAN_INTERVAL = 120
+
+boot = time.ticks_ms()
+LOGS = []
+
+CACHE = {
+    "ports": [],
+    "wifi": [],
+    "http": ""
+}
+
+last_scan = 0
+```
 **Upload** : Copiez le script sur votre Pico à l'aide de *Thonny*.
 
 Accès : Une fois lancé, l'adresse IP du Pico s'affichera dans la console. Connectez-vous via votre navigateur sur le même réseau local.
